@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1:1 문의</title>
+</head>
+<body>
+    <h1>1:1 문의</h1>
+    <form action="/submit/">
+        <table>
+            <tr>
+                <th colspan="3">제목</th>
+                <td>
+                    <select name="category">
+                        <option value>선택해주세요.</option>
+                        <option value="NO">일반</option>
+                        <option value="ID">계정</option>
+                        <option value="OT">기타</option>
+                    </select>
+                    <br>
+                    <input type="text" id="long" name="title">
+                </td>
+            </tr>
+            <tr>
+                <th colspan="3">이메일</th>
+                <td>
+                    <input type="text" id="short" name="email">
+                    <label><input type="checkbox" name="email_box" value="email">답변수신을 이메일로 받겠습니다.</label>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="3">문자메시지</th>
+                <td>
+                    <input type="text" id="short" name="sms">
+                    <label><input type="checkbox" name="sms_box" value="sms">답변수신을 문자메시지로 받겠습니다.</label>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="3">내용</th>
+                <td>
+                    <input type="text" id="content" name="content">
+                </td>
+            </tr>
+            <tr>
+                <th colspan="3">이미지</th>
+                <td>
+                    <form method="post" enctype="multipart/form-data">
+                        <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+                    </form>
+                </td>
+            </tr>
+        </table><br><br>
+        <input type="submit" value="제출" style="text-align: center; WIDTH: 120pt; HEIGHT: 30pt; margin: auto; display: block">
+    </form>
+</body>
+</html>
+
+<style>
+    table {
+        width: 100%;
+        border-top: 3px solid #444444;
+    }
+    input:focus {
+        outline: 1px solid #e2e2e2;
+    }
+    th, td {
+        border-bottom: 1px solid #e2e2e2;
+        padding: 20px;
+    }
+    th {
+        background-color: #e2e2e2;
+        text-align: left;
+    }
+    input[type='text'], select {
+        height: 25px;
+        border: 1px solid #e2e2e2;
+        outline: none;
+    }
+    input[id="short"] {
+        width: 40%;
+    }
+    input[id='long'] {
+        width: 100%;
+    }
+    input[id='content'] {
+        height: 300px;
+        width: 100%;
+    }
+</style>
