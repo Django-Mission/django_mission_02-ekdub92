@@ -25,8 +25,8 @@ def submit(request):
     conn = sqlite3.connect('db.sqlite3')
     cur = conn.cursor()
     cur.execute(
-        'INSERT INTO support_inquiry VALUES (?,?,?,?,?,?,?)',
-        (1, category, title, email, sms, content, image)
+        'INSERT INTO support_inquiry (category, heading, email, sms, content, image) VALUES (?,?,?,?,?,?)',
+        (category, title, email, sms, content, image)
     )
     conn.commit()
     return render(request, 'submit.html')
